@@ -1,0 +1,87 @@
+@model Hello.Models.Flight
+
+@{
+    ViewData["Title"] = "Add Flight";
+}
+
+<h2>Add Flight</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<style>
+    body {
+        background-image: url('https://wallpapercat.com/w/full/2/2/9/177444-3840x2160-desktop-4k-clouds-background-image.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: 'Segoe UI', sans-serif;
+    }
+</style>
+
+<form asp-action="AddFlight" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div>
+        <label asp-for="FlightNumber"></label>
+        <input asp-for="FlightNumber" class="form-control" />
+        <span asp-validation-for="FlightNumber" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="FromAirport"></label>
+        <input asp-for="FromAirport" class="form-control" />
+        <span asp-validation-for="FromAirport" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ToAirport"></label>
+        <input asp-for="ToAirport" class="form-control" />
+        <span asp-validation-for="ToAirport" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="DepartureTime"></label>
+        <input asp-for="DepartureTime" class="form-control" type="time" />
+        <span asp-validation-for="DepartureTime" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ArrivalTime"></label>
+        <input asp-for="ArrivalTime" class="form-control" type="time" />
+        <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="form-control" type="date" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ReturnDate"></label>
+        <input asp-for="ReturnDate" class="form-control" type="date" />
+        <span asp-validation-for="ReturnDate" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Class"></label>
+        <select asp-for="Class" class="form-control">
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+            <option value="Prime">Prime</option>
+        </select>
+        <span asp-validation-for="Class" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Save Flight</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

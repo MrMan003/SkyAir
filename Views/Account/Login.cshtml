@@ -1,0 +1,95 @@
+@{
+    ViewData["Title"] = "Skyair Check-in";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title class="h">CHECK IN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .h{
+            font-family: Arial;
+            font-size: 18px;
+            font-weight: bold;
+            color: gray;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.pexels.com/photos/912050/pexels-photo-912050.jpeg?cs=srgb&dl=pexels-ahmedmuntasir-912050.jpg&fm=jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .login-box {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            margin-top: 100px;
+        }
+        .A{
+            font-family: Times 'Times New Roman';
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .login-box input {
+            margin-bottom: 15px;
+        }
+        .mt-3 text-light{
+            font-style: italic;
+            font-weight: bold;
+            font-family: 'Times New Roman';
+        }
+
+        .tagline {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .text-light{
+            font-weight: bold;
+            font-family: Times 'Times New Roman';
+            
+        }
+
+        .subtext {
+            font-size: 1rem;
+            color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <div class="col-md-6 d-flex justify-content-center align-items-start">
+                <div class="login-box mt-5">
+                    <h4 class="A">Skyair</h4>
+                    <h5 class="text-light">Check-in</h5>
+                    <form method="post">
+                        <input type="text" name="username" class="form-control" placeholder="Your Name" required />
+                        <input type="password" name="password" class="form-control" placeholder="Booking Code" required />
+                        <button type="submit" class="btn btn-primary w-100">SIGN IN</button>
+                        @if (ViewBag.Error != null)
+                        {
+                            <p class="text-danger mt-2">@ViewBag.Error</p>
+                        }
+                    </form>
+                    <p class="mt-3 text-light" style="font-size: 0.8rem;">
+                        You’ll find your booking code on your e-ticket.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-start p-5">
+                <div class="tagline">Fly high.<br />above the sky.</div>
+                <div class="subtext">comfortable. secure. your way. ★★★</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

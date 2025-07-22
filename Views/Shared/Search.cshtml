@@ -1,0 +1,25 @@
+@model Hello.Models.FlightSearchViewModel
+
+<h2>Search Flights</h2>
+<style>
+    body {
+        background-image: url('https://wallpapercat.com/w/full/2/2/9/177444-3840x2160-desktop-4k-clouds-background-image.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: 'Segoe UI', sans-serif;
+    }
+</style>
+
+<form asp-controller="Flight" asp-action="SearchResults" method="post" class="form-inline">
+    <div class="form-group mb-2">
+        <label for="FromAirport" class="form-label">From:</label>
+        <input type="text" class="form-control mx-sm-2" id="FromAirport" name="FromAirport" required />
+    </div>
+    <div class="form-group mb-2">
+        <label for="ToAirport" class="form-label">To:</label>
+        <input type="text" class="form-control mx-sm-2" id="ToAirport" name="ToAirport" required />
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Search</button>
+</form>
