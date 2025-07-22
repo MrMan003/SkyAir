@@ -53,7 +53,7 @@ cd ../frontend
 npm start
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 SkyAir/
